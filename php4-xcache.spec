@@ -3,7 +3,7 @@ Summary:	%{_modname} - PHP opcode cacher
 Summary(pl.UTF-8):	%{_modname} - buforowanie opcodów PHP
 Name:		php4-%{_modname}
 Version:	1.2.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/PHP
 URL:		http://xcache.lighttpd.net/
@@ -14,6 +14,7 @@ BuildRequires:	rpmbuild(macros) >= 1.344
 BuildRequires:	sed >= 4.0
 %{?requires_zend_extension}
 Requires:	php4-common >= 3:4.4.0-3
+Conflicts:	php4-ZendOptimizer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_webapps	/etc/webapps
@@ -39,7 +40,7 @@ działające na produkcyjnych serwerach o dużym obciążeniu.
 cat > apache.conf <<'EOF'
 Alias /xcache %{_appdir}
 <Directory %{_appdir}>
-	Allow from all
+	Allow from 127.0.0.1
 </Directory>
 EOF
 
