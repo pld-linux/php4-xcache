@@ -3,7 +3,7 @@ Summary:	%{_modname} - PHP opcode cacher
 Summary(pl.UTF-8):	%{_modname} - buforowanie opcodów PHP
 Name:		php4-%{_modname}
 Version:	1.2.1
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages/PHP
 URL:		http://xcache.lighttpd.net/
